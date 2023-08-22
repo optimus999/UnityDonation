@@ -1,0 +1,34 @@
+.custom-loader {
+    width: 3.5vw;
+    height: 3.5vw;
+    display: grid;
+    border:4px solid #0000;
+    border-radius: 50%;
+    border-color:#ff0000 #0000;
+    animation: s6 0.5s infinite linear;
+    position: absolute;
+    left: 48vw;
+    z-index:100000;
+
+  }
+  .custom-loader::before,
+  .custom-loader::after {    
+    content:"";
+    grid-area: 1/1;
+    margin:2px;
+    border:inherit;
+    border-radius: 50%;
+  }
+  .custom-loader::before {
+    border-color:#ff8c00 #00ff0400;  
+    animation:inherit; 
+    animation-duration: 0.25s;
+    animation-direction: reverse;
+  }
+  .custom-loader::after {
+    margin:8px;
+  }
+  
+  @keyframes s6 { 
+    100%{transform: rotate(1turn)}
+  }

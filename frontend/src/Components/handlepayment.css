@@ -1,0 +1,170 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+.Apps {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	background-color: red;
+	background: url('leaf1.jpg') no-repeat center center fixed;
+    background-size: cover;
+	overflow: hidden;
+}	
+
+
+.book_container{
+	width: 25vw;
+	height:50vh;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgb(0 0 0 / 25%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: absolute;
+    top: 25%;
+    left: -300%;
+    animation: slide-in 1.5s forwards;
+}
+.formclass{
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+flex-direction: column;
+background-color: rgba(255, 255, 255, 0.5);
+transition: transform 1.6s ease;
+}
+.formclass h1{
+   text-align: center;
+}
+@keyframes slide-in {
+    to {
+      left: calc(47.25% - 150px);
+    }
+  }
+.formclass:hover.placeholder{
+	font-weight: 200;
+}
+.formclass:hover {
+    /* transform: scale(1.1);	 */
+	background-color: rgba(255, 255, 255, 0.9);
+  }
+.appsdiv2{
+	width: 50%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color:transparent;	
+}
+.appsdiv1{
+	width: 50%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color:transparent;
+}
+.appdiv1image{
+	width: 60%;
+	height: 60%;
+	opacity: 0.8;
+}
+
+.book_img {
+	width: 250px;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 10px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.book_name {
+	font-size: 20px;
+	font-weight: bold;
+	margin: 5px 0;
+	text-align: center;
+}
+
+.book_author {
+	font-size: 16px;
+	font-weight: 500;
+	margin: 5px 0;
+	text-align: center;
+}
+
+.book_price {
+	font-size: 16px;
+	font-weight: 500;
+	margin: 5px 0;
+	text-align: center;
+}
+
+.book_price > span {
+	color: #21a700;
+}
+
+.buy_btn {
+	width: 100%;
+	height: 50px;
+	outline: none;
+	border: none;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	background-color: #f4d072;
+	margin-top: 10px;
+}
+.sexy-input {
+    border: 1px solid rgb(0, 0, 0); /* Updated color */
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+	width: 15vw;
+  }
+
+  .sexy-input:focus {
+    border-color: rgb(22, 185, 49);
+    box-shadow: 0 0 5px rgba(22, 185, 49, 0.5);
+  }
+  .sexy-input::placeholder {
+    color: black; /* Set the color of the placeholder text */
+	font-weight: 700;
+  }
+
+  .sexy-button {
+    background-color: rgb(63, 134, 75); /* Updated color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .sexy-button:hover {
+    background-color: #12d022;
+  }
+  .bigleafimagediv{
+	width: 100%;
+	height: 100%;
+  }
+  .leafimage{
+	width: 100%;
+	height: 100%;
+  }

@@ -1,0 +1,61 @@
+
+
+.error-container {
+    text-align: center;
+}
+
+.error-content {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.error-icon {
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 48px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.error-details {
+    padding: 20px;
+    text-align: left;
+}
+
+.error-message {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #2980b9;
+}
+.error-code {
+    font-size: 48px;
+    color: #e74c3c;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
