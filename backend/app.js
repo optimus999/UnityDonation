@@ -8,7 +8,7 @@ const cors=require('cors');
 dotenv.config({path:'./.env'});
 require('./db/conn');
 
-app.use(cors({ origin: 'https://unitydonation.netlify.app/',
+app.use(cors({ origin: 'https://unitydonation.netlify.app',
 credentials:true }))
 app.use(express.json());
 const User=require('./model/userSchema');
