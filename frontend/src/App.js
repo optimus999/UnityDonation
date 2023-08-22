@@ -18,6 +18,7 @@ import {initialState,reducer} from '../src/reducer/useReducer';
 import Handlepayment from './Components/handlepayment';
 import Paymentsucesspage from './Components/paymentsucesspage';
 
+import {BASE_URL} from "./services/helper"
 // context api
 export const UserContext=createContext();
 
@@ -31,7 +32,8 @@ const App = () => {
     }
   }, []);
     
-    axios.defaults.baseURL='http://localhost:5000';
+    // axios.defaults.baseURL='http://localhost:5000';
+    axios.defaults.baseURL= BASE_URL;
     axios.defaults.withCredentials=true;
     
 
