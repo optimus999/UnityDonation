@@ -14,7 +14,7 @@ const Handlepayment = () => {
     const navigate =useNavigate();
 	const notify1 = (mess) => toast.error(mess, {
 		position: "top-center",
-		autoClose: 2000,
+		autoClose: 1500,
 		hideProgressBar: false,
 		closeOnClick: true,
 		pauseOnHover: true,
@@ -24,7 +24,7 @@ const Handlepayment = () => {
 		});
 		const notify = (mess) => toast.success(mess, {
 		  position: "top-center",
-		  autoClose: 3000,
+		  autoClose: 1500,
 		  hideProgressBar: false,
 		  closeOnClick: true,
 		  pauseOnHover: true,
