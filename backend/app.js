@@ -9,10 +9,10 @@ dotenv.config({path:'./.env'});
 require('./db/conn');
 
 
-// app.use(cors({ origin: 'https://unitydonation.netlify.app',
-// credentials:true }))
+app.use(cors({ origin: 'https://unitydonation.netlify.app',
+credentials:true }))
 
-app.use(cors());
+// app.use(cors());
 
 // app.use(cors({ origin: 'http://localhost:3000',
 // credentials:true }))
