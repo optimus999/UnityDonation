@@ -11,7 +11,7 @@
 	justify-content: center;
 	flex-direction: row;
 	background-color: red;
-	background: url('leaf1.jpg') no-repeat center center fixed;
+	background: url('https://res.cloudinary.com/dzpg9a3od/image/upload/v1692708310/leaf1_llomeb.jpg') no-repeat center center fixed;
     background-size: cover;
 	overflow: hidden;
 }	

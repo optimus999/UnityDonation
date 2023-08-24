@@ -16,7 +16,7 @@ const Contact = () => {
 
   const notify1 = (mess) => toast.error(mess, {
     position: "top-center",
-    autoClose: 3000,
+    autoClose: 1500,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -28,7 +28,7 @@ const Contact = () => {
 
     const notify = (mess) => toast.success(mess, {
       position: "top-center",
-      autoClose: 3000,
+      autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -38,7 +38,7 @@ const Contact = () => {
       });
       const notify2 = (mess) => toast.warn(mess, {
         position: "top-center",
-        autoClose: 3000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -54,6 +54,7 @@ const Contact = () => {
       const response = await axios.get('/gethelp', {
         headers: {
           'Content-Type': 'application/json',
+          Authorization:'Bearer '+localStorage.getItem("jwtoken")
         },
       });
       setLoading(false);
@@ -116,7 +117,8 @@ const Contact = () => {
 
    const response =await axios.post('/contact',{name:name,email:email,phone:phone,message:message},{
     headers:{
-      'Content-Type':'application/json'
+      'Content-Type':'application/json',
+      Authorization:'Bearer '+localStorage.getItem("jwtoken")
     }
   })
   setLoading(false);
@@ -192,7 +194,7 @@ const Contact = () => {
       </form>
       <button type='submit' onClick={contactform} disabled={loading} className='formsubbtn'>Send Message</button>
           <ToastContainer position="top-center"
-autoClose={3000}
+autoClose={1500}
 limit={10}
 hideProgressBar={false}
 newestOnTop={false}

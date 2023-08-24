@@ -10,7 +10,7 @@ import Load from './Loader';
 const Signup = () => {
   const notify1 = (mess) => toast.error(mess, {
     position: "top-center",
-    autoClose: 3000,
+    autoClose: 1500,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -22,7 +22,7 @@ const Signup = () => {
 
     const notify = (mess) => toast.success(mess, {
       position: "top-center",
-      autoClose: 3000,
+      autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -76,7 +76,7 @@ const Signup = () => {
 
     setTimeout(() => {
       navigate('/login');
-    }, 4000);
+    }, 2500);
   }
   catch(err)
   {
@@ -129,7 +129,7 @@ const Signup = () => {
           </div>
           <button className='registerbtn' onClick={PostData} disabled={loading}>Register</button> 
           <ToastContainer position="top-center"
-autoClose={3000}
+autoClose={1500}
 limit={10}
 hideProgressBar={false}
 newestOnTop={false}

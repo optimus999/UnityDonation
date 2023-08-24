@@ -24,6 +24,7 @@ const About = () => {
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
+          Authorization:'Bearer '+localStorage.getItem("jwtoken")
         },
         withCredentials: true,
       });

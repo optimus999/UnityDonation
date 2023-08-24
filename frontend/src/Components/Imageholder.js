@@ -28,7 +28,7 @@ const Imageholder = () => {
   const {state,dispatch}=useContext(UserContext);
   const notify1 = (mess) => toast.error(mess, {
     position: "top-center",
-    autoClose: 3000,
+    autoClose: 1500,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -40,7 +40,7 @@ const Imageholder = () => {
 
     const notify = (mess) => toast.success(mess, {
       position: "top-center",
-      autoClose: 3000,
+      autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -77,9 +77,12 @@ const Imageholder = () => {
       return;
     }
       try {
+        const test='Bearer '+localStorage.getItem("jwtoken");
+// console.log(test);
         const response = await axios.get('/gethelp', {
           headers: {
             'Content-Type': 'application/json',
+            Authorization:'Bearer '+localStorage.getItem("jwtoken")
           },
         });
         setshow(true);
@@ -182,7 +185,7 @@ const Imageholder = () => {
             <p className="para1">Hunger knows no boundaries. Let's unite and ensure that no one goes hungry. Your contribution can make a significant impact in the lives of hungry individuals.Every dollar counts. By donating to our cause, you are directly helping to alleviate hunger </p>
             <button className="donate-button" onClick={handleDonate}>Donate</button>
             <ToastContainer position="top-center"
-autoClose={3000}
+autoClose={1500}
 limit={10}
 hideProgressBar={false}
 newestOnTop={false}

@@ -12,7 +12,7 @@ import { UserContext } from "../App";
 const LogOut = () => {
   const notify1 = (mess) => toast.error(mess, {
     position: "top-center",
-    autoClose: 3000,
+    autoClose: 1500,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -24,7 +24,7 @@ const LogOut = () => {
 
     const notify = (mess) => toast.success(mess, {
       position: "top-center",
-      autoClose: 3000,
+      autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -42,26 +42,25 @@ const LogOut = () => {
         
         try {
           setloading(true);
-          const response = await axios.get('/logout', {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          })
-          notify(response.data);
+          // const response = await axios.get('/logout', {
+          //   headers: {
+          //     'Content-Type': 'application/json',
+          //   },
+          // })
+          notify("User Loggedout Successfully!!");
           dispatch({type:'USER',payload:false})
           localStorage.removeItem("payload");
+          localStorage.removeItem("jwtoken");
           setloading(false);
           
           setTimeout(() => {
             navigate('/login');
-          }, 4000);
+          }, 2500);
         }
         catch(err)
         {
           // console.log(err);
-          setloading(false);
-        notify1('LogOut Failed.');
-        navigate('/');
+        notify1('LogOut Failed.')
         }
     }
     useEffect(()=>{
@@ -72,7 +71,7 @@ const LogOut = () => {
     <div>
       {loading&&<Load/>}
       <ToastContainer position="top-center"
-autoClose={3000}
+autoClose={1500}
 limit={10}
 hideProgressBar={false}
 newestOnTop={false}

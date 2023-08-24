@@ -13,7 +13,7 @@ const Login = () => {
   
   const notify1 = (mess) => toast.error(mess, {
     position: "top-center",
-    autoClose: 3000,
+    autoClose: 1500,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -25,7 +25,7 @@ const Login = () => {
 
     const notify = (mess) => toast.success(mess, {
       position: "top-center",
-      autoClose: 3000,
+      autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -62,15 +62,17 @@ const Login = () => {
         'Content-Type':'application/json'
       }
     })
+    // console.log(response);
     const data = response.data;
     dispatch({ type: "USER", payload: true });
     localStorage.setItem("payload", "true");
+    localStorage.setItem("jwtoken", data.Token);
     setloading(false);
     notify(data.message);
 
     setTimeout(() => {
       navigate('/');
-    }, 4000);
+    }, 2500);
     
   }
   catch(err){
@@ -117,7 +119,7 @@ useEffect(() => {
           </div>
           <button onClick={loginuser} type="submit" className='loginbtn'>Log In</button>
           <ToastContainer position="top-center"
-autoClose={3000}
+autoClose={1500}
 limit={10}
 hideProgressBar={false}
 newestOnTop={false}

@@ -5,8 +5,8 @@ const bcrypt=require('bcryptjs');
 require('../db/conn');
 const User=require('../model/userSchema');
 const authenticate=require('../middleware/authenticate')
-const cookieParser = require("cookie-parser");
-router.use(cookieParser());
+// const cookieParser = require("cookie-parser");
+// router.use(cookieParser());
 const dotenv=require('dotenv');
 dotenv.config({path:'./.env'});
 const Razorpay = require("razorpay");
@@ -57,15 +57,19 @@ router.post('/login',async (req,res)=>{
       const {email,password}=req.body;
       
       const userLogin=await User.findOne({email:email});        //at the time of login if user enters the correct email then userLogin will contain the whole data of that user
+    //   console.log(userLogin);
+    
       if(userLogin)
       {
            const isMatch=await bcrypt.compare(password,userLogin.password);    //password entered by user,password present in the database
            token=await userLogin.generateAuthToken();
-           res.cookie('jwtoken',token,{
-               expires:new Date(Date.now()+2592000000)  ,      //user token expired after 30 days
-               httpOnly:true
-           })
-        //    console.log('cookie made successfully');
+
+        //    res.cookie('jwtoken',token,{
+        //        expires:new Date(Date.now()+2592000000)  ,      //user token expired after 30 days
+        //        httpOnly:false
+        //    })
+
+          //  console.log('cookie made successfully');
    
          
            if(!isMatch)
@@ -73,7 +77,7 @@ router.post('/login',async (req,res)=>{
                return res.status(400).json({error:'Invalid credentials , not matching'})
            }
            else
-           res.json({message:"Login Successfull ! Redirecting..."});
+           return res.json({message:"Login Successfull ! Redirecting...",Token:token});
       }
       else
       {
@@ -119,13 +123,13 @@ router.post('/contact',authenticate,async (req,res)=>{
     }
 })
 
-router.get('/logout',(req,res)=>{
-    // console.log('req.rootUser',req.rootUser);
-    res.clearCookie('jwtoken');
+// router.get('/logout',(req,res)=>{
+//     // console.log('req.rootUser',req.rootUser);
+//     // res.clearCookie('jwtoken');
     
-    // console.log('cookie deleted succesfully');
-    return res.status(200).send('User Loggedout Successfully!!');
-})
+//     // console.log('cookie deleted succesfully');
+//     return res.status(200).send('User Loggedout Successfully!!');
+// })
 
 
 router.post("/orders", async (req, res) => {

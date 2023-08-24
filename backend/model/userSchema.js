@@ -65,7 +65,11 @@ const userSchema=new mongoose.Schema({
 //we are generating token
 userSchema.methods.generateAuthToken=async function(){
     try{
-      let tokengenerated=jwt.sign({_id:this._id},process.env.SECRET_KEY)  ;       //id in the database : id of the user during login  and each time a token is being generated
+        const payload = {
+            user_id:this._id,
+            exp: Math.floor(Date.now() / 1000) + 10 * 24 * 60 * 60,
+        }
+      let tokengenerated=jwt.sign(payload,process.env.SECRET_KEY)  ;       //id in the database : id of the user during login  and each time a token is being generated
       this.tokens=this.tokens.concat({token:tokengenerated});
      await  this.save();
      return tokengenerated;

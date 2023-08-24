@@ -132,7 +132,7 @@ const Handlepayment = () => {
 					Donate now
 				</button>
 				<ToastContainer position="top-center"
-autoClose={2000}
+autoClose={1500}
 limit={10}
 hideProgressBar={false}
 newestOnTop={false}
